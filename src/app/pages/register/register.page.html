@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="vertical-align: middle">
+  <ion-list class="ion-padding">
+    <ion-item lines="inset">
+      <ion-label color="primary" position="floating">Email ID</ion-label>
+      <ion-input
+        type="email"
+        [(ngModel)]="user.email"
+        autocorrect="on"
+        autofocus
+        clearInput="true"
+        clearOnEdit="true"
+        color="primary"
+        inputmode="text"
+        required="true"
+      ></ion-input>
+      <ion-icon
+        size="large"
+        class="ion-align-self-center"
+        name="mail"
+        color="primary"
+        slot="start"
+      ></ion-icon>
+    </ion-item>
+
+    <ion-item lines="inset">
+      <ion-label color="primary" position="floating">Password</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="user.password"
+        autocorrect="on"
+        autofocus="on"
+        clearInput="true"
+        clearOnEdit="true"
+        color="primary"
+        inputmode="text"
+        required="true"
+      ></ion-input>
+      <ion-icon
+        size="large"
+        class="ion-align-self-center"
+        name="key"
+        color="primary"
+        slot="start"
+      ></ion-icon>
+    </ion-item>
+    <ion-item lines="inset">
+      <ion-label color="primary" position="floating">First Name</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="user.firstName"
+        autocorrect="on"
+        autofocus="on"
+        clearInput="true"
+        clearOnEdit="true"
+        color="primary"
+        inputmode="text"
+        required="true"
+      ></ion-input>
+      <ion-icon
+        size="large"
+        class="ion-align-self-center"
+        name="person"
+        color="primary"
+        slot="start"
+      ></ion-icon>
+    </ion-item>
+    <ion-item lines="inset">
+      <ion-label color="primary" position="floating">Last Name</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="user.lastName"
+        autocorrect="on"
+        autofocus="on"
+        clearInput="true"
+        clearOnEdit="true"
+        color="primary"
+        inputmode="text"
+        required="true"
+      ></ion-input>
+      <ion-icon
+        size="large"
+        class="ion-align-self-center"
+        name="person"
+        color="primary"
+        slot="start"
+      ></ion-icon>
+    </ion-item>
+    <ion-item lines="inset">
+      <ion-label color="primary" position="floating">Address</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="user.address"
+        autocorrect="on"
+        autofocus="on"
+        clearInput="true"
+        clearOnEdit="true"
+        color="primary"
+        inputmode="text"
+        required="true"
+      ></ion-input>
+      <ion-icon
+        size="large"
+        class="ion-align-self-center"
+        name="home"
+        color="primary"
+        slot="start"
+      ></ion-icon>
+    </ion-item>
+    <ion-item lines="inset">
+      <ion-button (click)="register()" class="ion-text-center">
+        <ion-text class="signIn">Register</ion-text>
+      </ion-button>
+      <ion-button (click)="login()" class="ion-text-center">
+        <ion-text class="signIn">Sign In</ion-text>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

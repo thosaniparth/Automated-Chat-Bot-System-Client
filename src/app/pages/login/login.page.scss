@@ -1,0 +1,45 @@
+.form {
+    margin-bottom: 2%;
+  }
+  
+  .signIn {
+    font-size: 150%;
+    font-weight: 400;
+  }
+  
+  .buttons {
+    margin-top: 10%;
+  }
+  
+  ion-content {
+    color: #703335;
+    // --background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzJhyUU_wNh9M73anVeBjQUzCyEeZwAzodNTmauRvwTQfD93S6') 0 0/100% 100% no-repeat;
+    --background: white;
+    --overflow: hidden;
+  }
+  
+  ion-list {
+      margin-top: 5vh;
+      width: 100%;
+      background: transparent;
+  }
+  
+  ion-item {
+      padding: 1%;
+    --color: #703335;
+    --ion-background-color: transparent;
+  }
+  
+  ion-footer {
+    background: var(--ion-color-light) !important;
+    color: var(--ion-color-primary) !important;
+  }
+  
+  :host {
+    .item-interactive.ion-invalid {
+      --highlight-background: none !important;
+    }
+    .item-interactive.ion-valid {
+      --highlight-background: var(--ion-color-primary) !important;
+    }
+  }

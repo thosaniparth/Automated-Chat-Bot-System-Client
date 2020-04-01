@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Orders</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf="this.orders.length==0">
+    No Past Orders Exist
+  </ion-item>
+  <ion-card *ngFor="let order of orders">
+    <ion-card-header>
+      <ion-card-title>{{order.Pizzas}}</ion-card-title>
+      <ion-card-subtitle *ngIf="order.DietPreference=='Veg' || 'Vegetarian';  else NonVeg" style="color: green;">{{order.DietPreference}}</ion-card-subtitle>
+      <ng-template #NonVeg><ion-card-subtitle style="color: red;">{{order.DietPreference}}</ion-card-subtitle></ng-template>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        Base: {{order.Base}}
+      </ion-item>
+      <ion-item>
+        Size: {{order.Size}}
+      </ion-item>
+      <ion-item *ngIf="order.Toppings.length!=0">
+        Toppings: {{order.Toppings}}
+      </ion-item>
+      <ion-item *ngIf="order.AddOns.length!=0">
+        Addons: {{order.AddOns}}
+      </ion-item>
+      <ion-item>
+        Address: {{order.address}}
+      </ion-item>
+      <ion-item>
+        Time: {{order.time | date: 'dd/MM/yyyy H:mm'  }}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

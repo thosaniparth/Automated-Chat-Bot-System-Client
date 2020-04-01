@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card (click)="viewOrders()">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="pizza"></ion-icon>
+        View Orders
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card (click)="chat()">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="chatbubbles"></ion-icon>
+        Chat
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

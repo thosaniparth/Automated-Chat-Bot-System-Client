@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bot</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="updateNewOrOld(true)" *ngIf="!newSet">
+        <ion-text>New Order</ion-text>
+      </ion-button>
+      <ion-button *ngIf="!newSet && !isNewUser">
+        <ion-text>|</ion-text>
+      </ion-button>
+      <ion-button *ngIf="newSet">
+        <ion-text *ngIf="new">New Order</ion-text>
+        <ion-text *ngIf="!new">Order Based on Preference</ion-text>
+      </ion-button>
+      <ion-button (click)="updateNewOrOld(false)" *ngIf="!newSet && !isNewUser"> <!---*ngIf="!isNewUser"--->
+        <ion-text>Preference</ion-text>
+      </ion-button>
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content>
+  <ion-buttons>
+    
+  </ion-buttons>
+  <div class="chats">
+    <div class="chatbox">
+      <div *ngFor="let chat of chatService.chats">
+        <div class="message sent" *ngIf="chat.type!=='bot' && chat.isMe">
+          {{chat.message}}
+          <span class="metadata">
+            <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span>
+          </span>
+        </div>
+        
+        <div class="message received" *ngIf="chat.type =='bot' && !chat.isMe">
+          {{chat.message}}
+          <span class="metadata">
+            <span class="time">{{chat.createdAt | date: 'HH:mm aaa'}}</span>
+          </span>
+        </div>
+      </div>
+      <div class="message sent" *ngIf="chatService.sending && !chatService.recieving" style="width: 40%;">
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      </div>
+      <div class="message received" *ngIf="chatService.recieving && !chatService.sending" style="width: 40%;">
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer">
+    <div class="flex-items" padding>
+        <ion-input [(ngModel)]="message" name="message" class="input_message" placeholder="send message ..." autofocus="true" [disabled]=disable></ion-input>
+        <ion-icon class="send" name="mic"></ion-icon>
+        <ion-icon class="send" (click)="sendMessage()" name="send"></ion-icon>
+    </div>
+  </div>
+</ion-footer>

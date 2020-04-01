@@ -1,0 +1,8 @@
+{
+  "name": "chatAppMinorProject",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
